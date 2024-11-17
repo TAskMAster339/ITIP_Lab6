@@ -48,7 +48,7 @@ public class ShopAssistant {
             count += 1;
         }
     }
-    public Product getMostPopularProduct(){
+    public String getMostPopularProduct(){
         String maxName = "";
         int maxFreq = -1;
         for (var key : frequency.keySet()){
@@ -60,6 +60,6 @@ public class ShopAssistant {
         if (maxFreq == -1){
             return null;
         }
-        return new Product(maxName, maxFreq);
+        return maxName;
     }
 }

@@ -17,16 +17,17 @@ public class Stack<T> {
         }
     }
     public T pop() {
-        try {
+        if (!isEmpty()) {
             head -= 1;
             return data[head];
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("Tried to pop from an empty stack. " + e.getMessage());
-            return null;
         }
+        return null;
     }
     public T peek() {
-        return data[head - 1];
+        return isEmpty() ? null : data[head - 1];
+    }
+    public boolean isEmpty(){
+        return head == 0;
     }
 }
 
